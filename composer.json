@@ -8,5 +8,21 @@
             "email": "ion.marusic@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+	"swagger-api/swagger-ui": "~2.0"
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "swagger-api/swagger-ui",
+                "version": "2.0.24",
+                "source": {
+                    "url": "https://github.com/swagger-api/swagger-ui.git",
+                    "type": "git",
+                    "reference": "v2.0.24"
+                }
+            }
+        }
+    ]
 }
