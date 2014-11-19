@@ -20,3 +20,21 @@ public function registerBundles()
     );
 }
 ```
+
+Import the bundle's config files into application's config.yml file
+``` php
+// app/config/config.yml
+imports:
+    // ...
+    - { resource: @RatzaSwaggerUIBundle/Resources/config/config.yml }
+```
+
+
+Reference Configuration
+-----------------------
+``` yaml
+ratza_swagger_ui:
+    api_docs:
+        route: false
+        path: api/api-docs
+```

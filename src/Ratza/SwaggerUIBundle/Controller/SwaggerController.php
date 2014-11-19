@@ -23,8 +23,15 @@ class SwaggerController extends Controller
      */
     public function indexAction()
     {
+        $path = $this->container->getParameter('ratza_swagger_ui.api_docs.path');
+
+        // Check if the setting is a route or a path
+        if ($this->container->getParameter('ratza_swagger_ui.api_docs.route')) {
+            $path = $this->generateUrl($path);
+        }
+
         return $this->render('RatzaSwaggerUIBundle:Swagger:index.html.twig', array(
-            "api_docs_url" => $this->generateUrl('nelmio_api_doc_swagger_resource_list')
+            "api_docs_url" => $path
         ));
     }
 
