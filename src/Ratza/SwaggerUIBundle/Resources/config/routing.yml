@@ -1,0 +1,5 @@
+ratza_swagger_ui:
+    pattern: /
+    defaults: { _controller: RatzaSwaggerUIBundle:Swagger:index }
+    requirements:
+        _method: GET
