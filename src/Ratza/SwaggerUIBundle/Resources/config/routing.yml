@@ -1,5 +1,11 @@
-ratza_swagger_ui:
+ratza_swagger_ui_index:
     pattern: /
     defaults: { _controller: RatzaSwaggerUIBundle:Swagger:index }
+    requirements:
+        _method: GET
+
+ratza_swagger_ui_oauth:
+    pattern: /o2c.html
+    defaults: { _controller: RatzaSwaggerUIBundle:Swagger:oauth }
     requirements:
         _method: GET
