@@ -30,6 +30,11 @@ class SwaggerController extends Controller
             $path = $this->generateUrl($path);
         }
 
+        // Filter out the last slash from the url (as SwaggerUI appends it implicitly)
+        if (substr($path, -1, 1) === '/') {
+            $path = substr($path, 0, -1);
+        }
+
         return $this->render('RatzaSwaggerUIBundle:Swagger:index.html.twig', array(
             "api_docs_url" => $path
         ));
