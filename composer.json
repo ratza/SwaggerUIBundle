@@ -1,0 +1,12 @@
+{
+    "name": "ratza/swagger-ui-bundle",
+    "description": "A Symfony Bundle that integrates SwaggerUI",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ion Marusic",
+            "email": "ion.marusic@gmail.com"
+        }
+    ],
+    "require": {}
+}

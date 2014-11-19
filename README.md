@@ -1,4 +1,4 @@
 SwaggerUIBundle
 ===============
 
-A Symfony that integrates SwaggerUI
+A Symfony Bundle that integrates SwaggerUI
