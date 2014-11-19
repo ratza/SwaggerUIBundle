@@ -22,7 +22,7 @@ public function registerBundles()
 ```
 
 Import the bundle's config files into application's config.yml file
-``` php
+``` yaml
 // app/config/config.yml
 imports:
     // ...
