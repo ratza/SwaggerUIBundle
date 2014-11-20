@@ -27,13 +27,38 @@
     {% endjavascripts %}
 
     <script type="text/javascript">
+         var apiUrl = [];
+         var apiDocsUrl = "{{ api_docs_url }}";
+         var sfjsIsValidAJAX = function(url) {
+            var result = false;
+            apiUrl.forEach(function (baseUrl) {
+                if (result) return;
+                result = url.search(absolutePath(baseUrl + '/')) == -1;
+            });
+            return result;
+        };
+
+        var absolutePath = function(href) {
+            var link = document.createElement("a");
+            link.href = href;
+            return (link.protocol+"//"+link.host+link.pathname+link.search+link.hash);
+        };
+
         $(function () {
             window.swaggerUi = new SwaggerUi({
-                url: "{{ api_docs_url }}",
+                url: apiDocsUrl,
                 dom_id: "swagger-ui-container",
                 supportedSubmitMethods: ['get', 'post', 'put', 'delete'],
-                onComplete: function(){
+                onComplete: function(SwaggerApi){
                     log("Loaded SwaggerUI");
+
+                    SwaggerApi.apisArray.forEach(function (api) {
+                        if (absolutePath(api.url).search(absolutePath(api.basePath + '/')) == -1) {
+                            if (apiUrl.indexOf(api.basePath) == -1) {
+                                apiUrl.push(api.basePath);
+                            }
+                        }
+                    });
 
                     $('pre code').each(function(i, e) {
                         hljs.highlightBlock(e)
@@ -54,6 +79,7 @@
                     window.authorizations.add("key", new ApiKeyAuthorization("api_key", key, "query"));
                 }
             });
+            window.authorizations.add("ajax", new ApiKeyAuthorization("X-Requested-With", "XMLHttpRequest", "header"));
             window.swaggerUi.load();
         });
     </script>
