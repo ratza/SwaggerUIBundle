@@ -11,8 +11,17 @@ use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
+/**
+ * Class RatzaSwaggerUIExtension
+ *
+ * @package Ratza\SwaggerUIBundle\DependencyInjection
+ */
 class RatzaSwaggerUIExtension extends Extension
 {
+    /**
+     * @param array             $configs
+     * @param ContainerBuilder  $container
+     */
     public function load(array $configs, ContainerBuilder $container)
     {
         $processor = new Processor();

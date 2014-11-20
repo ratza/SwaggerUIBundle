@@ -13,13 +13,16 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class SwaggerController
+ *
  * @package Ratza\SwaggerUIBundle\Controller
- * @author Ion Marusic <ion.marusic@gmail.com>
+ * @author  Ion Marusic <ion.marusic@gmail.com>
  */
 class SwaggerController extends Controller
 {
     /**
      * This is main action that renders the Swagger UI page
+     *
+     * @return Response
      */
     public function indexAction()
     {
@@ -49,6 +52,7 @@ class SwaggerController extends Controller
     {
         $file = $this->get('file_locator')->locate('@RatzaSwaggerUIBundle/Resources/public/swagger/o2c.html');
         $file = new SplFileInfo($file, null, null);
+
         return Response::create($file->getContents());
     }
 }
