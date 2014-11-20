@@ -15,7 +15,6 @@ use Symfony\Component\HttpFoundation\Response;
  * Class SwaggerController
  *
  * @package Ratza\SwaggerUIBundle\Controller
- * @author  Ion Marusic <ion.marusic@gmail.com>
  */
 class SwaggerController extends Controller
 {
