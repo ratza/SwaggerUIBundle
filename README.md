@@ -29,6 +29,15 @@ imports:
     - { resource: @RatzaSwaggerUIBundle/Resources/config/config.yml }
 ```
 
+For the Symfony 2.6 WebProfiler to correctly count and display the AJAX requests from the
+SwaggerUI you need to:
+
+1. Create override folder: `app/Resources/WebProfilerBundle/views/Profiler`
+2. CD into the directory created in step 1
+3. Symlink the file from this Bundle by running:
+``` sh
+$ ln -s ../../../../../vendor/ratza/swagger-ui-bundle/src/Ratza/SwaggerUIBundle/Resources/views/Profiler/base_js.html.twig
+```
 
 Reference Configuration
 -----------------------
