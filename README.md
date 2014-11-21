@@ -43,6 +43,10 @@ Reference Configuration
 -----------------------
 ``` yaml
 ratza_swagger_ui:
+    force_xhr: true
+    auth_key_prefix: "Bearer "
+    auth_field_key: "Authorization"
+    auth_field_location: "header"
     api_docs:
         route: false
         path: api/api-docs
