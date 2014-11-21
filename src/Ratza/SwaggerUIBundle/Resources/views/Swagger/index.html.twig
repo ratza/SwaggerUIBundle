@@ -76,7 +76,7 @@
                 log("key: " + key);
                 if(key && key.trim() != "") {
                     log("added key " + key);
-                    window.authorizations.add("key", new ApiKeyAuthorization("api_key", key, "query"));
+                    window.authorizations.add("key", new ApiKeyAuthorization("access_token", key, "query"));
                 }
             });
             window.authorizations.add("ajax", new ApiKeyAuthorization("X-Requested-With", "XMLHttpRequest", "header"));
