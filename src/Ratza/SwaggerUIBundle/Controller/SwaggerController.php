@@ -41,7 +41,8 @@ class SwaggerController extends Controller
             "api_docs_url" => $path,
             "auth_field_key" => $this->container->getParameter('ratza_swagger_ui.auth_field_key'),
             "auth_field_location" => $this->container->getParameter('ratza_swagger_ui.auth_field_location'),
-            "auth_key_prefix" => $this->container->getParameter('ratza_swagger_ui.auth_key_prefix')
+            "auth_key_prefix" => $this->container->getParameter('ratza_swagger_ui.auth_key_prefix'),
+            "force_xhr" => $this->container->getParameter('ratza_swagger_ui.force_xhr')
         ));
     }
 

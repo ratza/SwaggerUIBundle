@@ -26,6 +26,7 @@ class Configuration implements ConfigurationInterface
         $treeBuilder
             ->root('ratza_swagger_ui')
             ->children()
+                ->booleanNode('force_xhr')->defaultTrue()->end()
                 ->scalarNode('auth_key_prefix')
                     ->defaultValue('Bearer ')
                 ->end()

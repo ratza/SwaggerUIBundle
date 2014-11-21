@@ -79,7 +79,9 @@
                     window.authorizations.add("key", new ApiKeyAuthorization("{{ auth_field_key }}", "{{ auth_key_prefix }}"+key, "{{ auth_field_location }}"));
                 }
             });
+            {% if force_xhr == true %}
             window.authorizations.add("ajax", new ApiKeyAuthorization("X-Requested-With", "XMLHttpRequest", "header"));
+            {% endif %}
             window.swaggerUi.load();
         });
     </script>

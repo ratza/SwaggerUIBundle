@@ -28,6 +28,7 @@ class RatzaSwaggerUIExtension extends Extension
         $configuration = new Configuration();
         $config = $processor->processConfiguration($configuration, $configs);
 
+        $container->setParameter('ratza_swagger_ui.force_xhr', $config['force_xhr']);
         $container->setParameter('ratza_swagger_ui.auth_field_location', $config['auth_field_location']);
         $container->setParameter('ratza_swagger_ui.auth_key_prefix', $config['auth_key_prefix']);
         $container->setParameter('ratza_swagger_ui.auth_field_key', $config['auth_field_key']);
