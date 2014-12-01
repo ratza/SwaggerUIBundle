@@ -8,6 +8,24 @@ Installation
 
 Require the `ratza/swagger-ui-bundle` package in your composer.json and update your dependencies.
 
+Also add the swagger-api repository in your repositories key of the composer.json file:
+``` json
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "swagger-api/swagger-ui",
+                "version": "2.0.24",
+                "source": {
+                    "url": "https://github.com/swagger-api/swagger-ui.git",
+                    "type": "git",
+                    "reference": "v2.0.24"
+                }
+            }
+        }
+    ]
+```
+
 Register the bundle in `app/AppKernel.php`:
 
 ``` php
